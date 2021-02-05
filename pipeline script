@@ -1,0 +1,20 @@
+pipeline {
+  agent any
+  stages {
+    stage('Source') { // Get code
+      steps {
+        // get code from our Git repository
+        git branch: '**', url: 'https://github.com/dvp-2/repo1.git'
+      }
+    }
+    stage('Compile') { // Compile and do unit testing
+      tools {
+        maven 'mvn3.6.3'
+        jdk 'jdk8'
+      }
+      steps {
+        // run Gradle to execute compile and unit testing
+        bat 'mvn clean compile'
+      }
+    }
+  }
