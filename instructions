@@ -1,0 +1,45 @@
+links
+wget https://bitbucket.org/devopsricha/scripts-2/raw/HEAD/backup.sh
+wget https://bitbucket.org/devopsricha/scripts-2/raw/HEAD/main-script.sh
+
+
+web.php string
+ 'formatter' => [
+
+            'class' => 'uims\core\modules\core\helper\Formatter',
+
+   	     'nullDisplay' => '',
+
+            'defaultTimeZone' => 'Asia/Kolkata',
+
+        ],
+
+
+
+        'authManager' => [
+
+            'class' => 'uims\user\modules\jiuser\components\rbac\DbManager',
+
+        ],
+
+'bootstrap' => ['log', 'queue', 'sentry'],
+
+also add following lines in web.php of uims_teqip
+'sentry' => [
+    'class' => "uims\\extra\modules\\extra\components\SentryComponent",
+    'dsn' => "https://7325a089897e4c0294bac88f413a5690@o913480.ingest.sentry.io/5851545",
+    'tag' => ["name" => "teqip.instituteshortcode.uims"]
+],
+
+
+
+shivajiuni-maharashtra
+
+
+
+https://teqip.samarth.edu.in/masterdata.sql  for truncate table and permissions issues.
+
+
+
+
+
